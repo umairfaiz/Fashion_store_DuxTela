@@ -1,419 +1,1137 @@
 <!DOCTYPE html>
-<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
-<!--[if !IE]><!-->
-
 <html lang="en">
-    <!--<![endif]-->
     <head>
         <meta charset="utf-8">
-        <link rel="icon" type="image/png" href="images/MainIcon.png">
-        <title>Umair Faiz | The developer</title>
-        <meta name="description" content="Worthy a Bootstrap-based, Responsive HTML5 Template">
-        <meta name="author" content="htmlcoder.me">
-                    
-        <!-- Mobile Meta -->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">    
+        <title>Dux Tela | Home</title>
 
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="images/favicon.ico">
+        <!-- Font awesome -->
+        <link href="css/font-awesome.css" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.css" rel="stylesheet"> 
+        <!-- SmartMenus jQuery Bootstrap Addon CSS -->
+        <link href="css/jquery.smartmenus.bootstrap.css" rel="stylesheet">
+        <!-- Product view slider -->
+        <link rel="stylesheet" type="text/css" href="css/jquery.simpleLens.css">    
+        <!-- slick slider -->
+        <link rel="stylesheet" type="text/css" href="css/slick.css">
+        <!-- price picker slider -->
+        <link rel="stylesheet" type="text/css" href="css/nouislider.css">
+        <!-- Theme color -->
+        <link id="switcher" href="css/theme-color/green-theme.css" rel="stylesheet">
 
-        <!-- Web Fonts -->
-        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700,300&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-        <link href='http://fonts.googleapis.com/css?family=Raleway:700,400,300' rel='stylesheet' type='text/css'>
+        <!-- Main style sheet -->
+        <link href="css/style.css" rel="stylesheet">    
 
-        <!-- Bootstrap core CSS -->
-        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="button/glowingButton.css" rel="stylesheet"> 
 
-        <!-- Font Awesome CSS -->
-        <link href="fonts/font-awesome/css/font-awesome.css" rel="stylesheet">
+        <!-- Google Font -->
+        <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 
-        <!-- Plugins -->
-        <link href="css/animations.css" rel="stylesheet">
 
-        <!-- Worthy core CSS file -->
-        <link href="css/style.css" rel="stylesheet">
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
 
-        <!-- Custom css --> 
-        <link href="css/custom.css" rel="stylesheet">
+
     </head>
+    <body> 
+        <script>
+            // This function is called when someone finishes with the Login
+            // Button.  See the onlogin handler attached to it in the sample
+            // code below.
 
-    <body class="no-trans">
-        <!-- scrollToTop -->
-        <!-- ================ -->
-        <div class="scrollToTop"><i class="icon-up-open-big"></i></div>
+            window.fbAsyncInit = function () {
+                FB.init({
+                    appId: '',
+                    cookie: true,
+                    xfbml: true,
+                    version: 'v2.12'
+                });
 
-        <!-- header start -->
-        <!-- ================ --> 
-        <header class="header fixed clearfix navbar navbar-fixed-top">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
+                FB.AppEvents.logPageView();
 
-                        <!-- header-left start -->
-                        <!-- ================ -->
-                        <div class="header-left clearfix">
+                FB.getLoginStatus(function (response) {
+//                    statusChangeCallback(response);
+                        if (response.status === 'connected') {
+		    		document.getElementById('status').innerHTML = 'We are connected.';
+		    		document.getElementById('login').style.visibility = 'hidden';
+		    	} else if (response.status === 'not_authorized') {
+		    		document.getElementById('status').innerHTML = 'We are not logged in.';
+		    	} else {
+		    		document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+		    	}
+                });
 
-                            <!-- logo -->
-                            <div class="logo smooth-scroll">
-                                <a href="#banner"><img id="logo" src="images/logo.png" alt="UF"></a>
-                            </div>
+            };
 
-                            <!-- name-and-slogan -->
-
-
-                        </div>
-                        <!-- header-left end -->
-
-                    </div>
-                    <div class="col-md-8">
-
-                        <!-- header-right start -->
-                        <!-- ================ -->
-                        <div class="header-right clearfix">
-
-                            <!-- main-navigation start -->
-                            <!-- ================ -->
-                            <div class="main-navigation animated">
-
-                                <!-- navbar start -->
-                                <!-- ================ -->
-                                <nav class="navbar navbar-default" role="navigation">
-                                    <div class="container-fluid">
-
-                                        <!-- Toggle get grouped for better mobile display -->
-                                        <div class="navbar-header">
-                                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
-                                                <span class="sr-only">Toggle navigation</span>
-                                                <span class="icon-bar"></span>
-                                                <span class="icon-bar"></span>
-                                                <span class="icon-bar"></span>
-                                            </button>
-                                        </div>
-
-                                        <!-- Collect the nav links, forms, and other content for toggling -->
-                                        <div class="collapse navbar-collapse scrollspy smooth-scroll" id="navbar-collapse-1">
-                                            <ul class="nav navbar-nav navbar-right">
-                                                <li class="active"><a href="#banner">Home</a></li>
-                                                <li><a href="#about">About</a></li>
-                                                <li><a href="#services">Projects</a></li>
-                                                <!--<li><a href="#portfolio">Portfolio</a></li>-->
-                                                <!--<li><a href="#clients">Clients</a></li>-->
-                                                <li><a href="#contact">Hire Me</a></li>
-                                            </ul>
-                                        </div>
-
-                                    </div>
-                                </nav>
-                                <!-- navbar end -->
-
-                            </div>
-                            <!-- main-navigation end -->
-
-                        </div>
-                        <!-- header-right end -->
-
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- header end -->
-
-        <!-- banner start -->
-        <!-- ================ -->
-        <div id="banner" class="banner">
-            <div class="banner-image"></div>
-            <div class="banner-caption">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-8 col-md-offset-2 object-non-visible" data-animation-effect="fadeIn">
-                            <h1 class="text-center">Hello, I'm Umair</h1>
-                            <p class="lead text-center">Part time gamer | <span>Full time developer</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- banner end -->
-
-        <!-- section start -->
-        <!-- ================ -->
-        <div class="section clearfix object-non-visible" data-animation-effect="fadeIn">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h1 id="about" class="title text-center">About</h1>
-                        <div class="space"></div>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <p>Hey, I’m a software developer from Colombo, Sri lanka. I have been working in computer programming, machine learning, mobile app creation, front-end/back-end web, database/server management, and just about everything else under the sun.</p>
-                                <p>Some languages I frequently find myself using include C, C#, C++, Java, HTML5, CSS3, Python, and SQL.</p>
-                                <p>Currently working on an E-commerce site for <a href="http://www.duxtela.com/">Duxtela</a> which focuses on customized t-shirts. This site contains an interactive customization tool to allow users to design their own t-shirts while it carries other basic functionalities of an e-commerce site. </p>
-                                <p>Other than that, I love anything related to our cosmos! So, I am currently researching to build an application in this field to help fellow enthusiasts view space in detail.</p>
-
-                                <div class="space"></div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading" role="tab" id="headingOne">
-                                            <h4 class="panel-title">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                                   Minimizing prediction error rate by combining multiple classifiers
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
-                                            <div class="panel-body">
-                                                The main angle discussed here would be using sentiment analysis along with data mining to capture user's browsing behavior with an accuracy higher than 80%. and not to mention using a small training dataset.
-                                                <a href="https://umairfaiz.wordpress.com/2017/12/07/improving-prediction-error-rate-by-combining-multiple-classifiers/">Read more</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading" role="tab" id="headingTwo">
-                                            <h4 class="panel-title">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                    Anti-social behavior detection using browsing data
-                                                </a>
-                                            </h4>
-                                        </div>
-                                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                            <div class="panel-body">
-                                                An unique characteristic was implemented in this tool where multiple classifiers was used to predict one output to reduce the false positive and false negative in the prediction. This is almost similar to the pipeline technique....
-                                               <a href="https://wp.me/p7psA2-o">Read more</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- section end -->
-
-        <!-- section start -->
-        <div class="section translucent-bg bg-image-1 blue">
-            <div class="container object-non-visible" data-animation-effect="fadeIn">
-                <h1 id="services"  class="text-center title">Projects</h1>
-                <div class="space"></div>
-                <div class="row">
-                    <div class="col-sm-6">
-
-                        <div class="media">
-                            <div class="media-body text-right">
-                                <h4 class="media-heading">Antisocial behavior identification tool</h4>
-                                <p>A Python based tool to identify users with antisocial tendencies using browser history. Uses sentiment analysis and machine learning to differentiate logs between positive and negative.</p>
-                                <a href="https://github.com/umairfaiz/Python-Machine_learning-ASB_Tool">Find more from here</a>
-                            </div>
-                            <div class="media-right">
-                                <i class="fa fa-keyboard-o"></i>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="media-body text-right">
-                                <h4 class="media-heading">Amusement Park Management System</h4>
-                                <p>A Java enterprise edition based amusement park management system which automates the process of entering and paying for attraction through a cashless system.</p>
-                                <a href="https://github.com/umairfaiz/JEE-DisneyPark">Find more from here</a>
-                            </div>
-                            <div class="media-right">
-                                <i class="fa fa-keyboard-o"></i>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="media-body text-right">
-                                <h4 class="media-heading">Car park management system</h4>
-                                <p>A C# based vehicle simulator which allows to manage a car park system.</p>
-                                <a href="https://github.com/umairfaiz/C_sharp_Vehicle-Car-park">Find more from here</a>
-                            </div>
-                            <div class="media-right">
-                                <i class="fa fa-keyboard-o"></i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="space visible-xs"></div>
-                    <div class="col-sm-6">
-                        <div class="media">
-                            <div class="media-left">
-                                <i class="fa fa-desktop"></i>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">E-commerce website</h4>
-                                <p>A Java based E-commerce website for a local tea shop which caters similar functionalities such as E-bay.</p>
-                                <a href="https://github.com/umairfaiz/JSP-Ecommerce_tea_shop">Find more from here</a>
-                            </div>
-                        </div>
-                        <div class="media">
-                            <div class="media-left">
-                                <i class="fa fa-desktop"></i>
-                            </div>
-                            <div class="media-body">
-                                <h4 class="media-heading">Kiosk system facilitating ticketing</h4>
-                                <p>A C++ based kiosk system for a popular state-of-the-art exhibition and convention center in the country facilitating ticketing and reservation function to be used by its customers and administrative staff.</p>
-                                <a href="https://github.com/umairfaiz/JSP-Ecommerce_tea_shop">Find more from here</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "https://connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+            
+            
+            // login with facebook with extra permissions
+		function login() {
+			FB.login(function(response) {
+				if (response.status === 'connected') {
+		    		document.getElementById('status').innerHTML = 'We are connected.';
+		    		document.getElementById('login').style.visibility = 'hidden';
+                                
+		    	} else if (response.status === 'not_authorized') {
+		    		document.getElementById('status').innerHTML = 'We are not logged in.'
+		    	} else {
+		    		document.getElementById('status').innerHTML = 'You are not logged into Facebook.';
+		    	}
+			}, {scope: 'email'});
+		}
+		
+		// getting basic user info
+		function getInfo() {
+			FB.api('/me', 'GET', {locale: 'en_US', fields: 'first_name,last_name,name,email,id'}, function(response) {
+				document.getElementById('status').innerHTML = response.id;
+                                console.log(response.name);
+                                
+                                console.log(response.$user['email']);
+                                console.log(response.first_name)
+			});
+		}
+        </script>
+        <!-- wpf loader Two -->
+        <div id="wpf-loader-two">          
+            <div class="wpf-loader-two-inner">
+                <span>Loading</span>
             </div>
         </div> 
-
-        <!-- section end -->
-
-        <!-- section start -->
-        <!-- ================ -->
-        <div class="default-bg space blue">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="text-center"><a href="#contact">Let's Work Together!</a></h1>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- section end -->
-
-        <!-- section start -->
-        <!-- ================ -->
-        <!--#####################################Portfolio comes here #######################################################-->
-        <!-- section end -->
-
-        <!-- section start -->
-        <!-- ================ -->
-        <!--#################################Clients comes here######################################################-->
-        <!-- section end -->
-
-        <!-- section start -->
-        <!--<div class="default-bg space">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2">
-                        <h1 class="text-center">10000+ Happy Clients!</h1>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-        
-        <!-- section end -->
+        <!-- / wpf loader Two -->       
+        <!-- SCROLL TOP BUTTON -->
+        <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
+        <!-- END SCROLL TOP BUTTON -->
 
 
-        <!-- footer start -->
-        <!-- ================ -->
-        <footer id="footer">
-
-            <!-- .footer start -->
-            <!-- ================ -->
-            <div class="footer section">
-                <div class="container">
-                    <h1 class="title text-center" id="contact">Hire Me</h1>
-                    <div class="space"></div>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <div class="footer-content">
-                                <p class="large">Are you looking for a professional, communicative & punctual software engineer?</p>
-                                <p class="large">I'm currently accepting new projects and would love to hear about yours. Please take a few minutes to tell me about it.</p>
-
-                                <ul class="list-icons">
-                                    <li><i class="fa fa-map-marker pr-10"></i> Colombo, Sri lanka</li>
-                                    <li><i class="fa fa-phone pr-10"></i> +94 779480760</li>
-                                    <li><i class="fa fa-envelope-o pr-10"></i> umairfaiz822@gmail.com</li>
-                                </ul>
-                                <ul class="social-links">
-                                    <li class="facebook"><a target="_blank" href="https://www.facebook.com/umairfaiz"><i class="fa fa-facebook"></i></a></li>
-                                    <li class="twitter"><a target="_blank" href="https://twitter.com/Umairfaiz"><i class="fa fa-twitter"></i></a></li>
-
-                                    <li class="linkedin"><a target="_blank" href="https://www.linkedin.com/in/umairfaiz"><i class="fa fa-linkedin"></i></a></li>
-                                    <li class="twitter"><a target="_blank" href="https://github.com/umairfaiz"><i class="fa fa-github"></i></a></li>
-                                    <li class="twitter"><a target="_blank" href="http://umairfaiz.wordpress.com"><i class="fa fa-wordpress"></i></a></li>
-                                    <li class="twitter"><a target="_blank" href="https://github.com/umairfaiz"><i class="fa fa-youtube"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="footer-content">
-                                <form role="form" id="footer-form" method="post">
-                                    <div class="form-group has-feedback">
-                                        <label class="sr-only" for="name2">Name</label>
-                                        <input type="text" class="form-control" id="name2" placeholder="Name" name="name2" required>
-                                        <i class="fa fa-user form-control-feedback"></i>
-                                    </div>
-                                    <div class="form-group has-feedback">
-                                        <label class="sr-only" for="email2">Email address</label>
-                                        <input type="email" class="form-control" id="email2" placeholder="Enter email" name="email2" required>
-                                        <i class="fa fa-envelope form-control-feedback"></i>
-                                    </div>
-                                    <div class="form-group has-feedback">
-                                        <label class="sr-only" for="message2">Message</label>
-                                        <textarea class="form-control" rows="8" id="message2" placeholder="Message" name="message2" required></textarea>
-                                        <i class="fa fa-pencil form-control-feedback"></i>
-                                    </div>
-                                    <input type="submit" name="button_pressed" value="Send" class="btn btn-default">
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- .footer end -->
-<?php
-         if(isset($_POST['button_pressed']))
-         {
-            $to='info@umairfaiz.xyz';
-            $subject='Inquiry';
-            $from="From: ". $_REQUEST['email2'];
-            $msg=$from. $_REQUEST['message2'];
-            $msg=  wordwrap($msg,70);
-            mail($to, $subject, $msg);
-            echo 'Email Sent';
-         }
-?>
-            <!-- .subfooter start -->
-            <!-- ================ -->
-            <div class="subfooter">
+        <!-- Start header section -->
+        <header id="aa-header">
+            <!-- start header top  -->
+            <div class="aa-header-top">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-12">
-                            <p class="text-center">By <a target="_blank" href="http://umairfaiz.xyz">Umair Faiz</a>.</p>
+                            <div class="aa-header-top-area">
+                                <!-- start header top left -->
+                                <div class="aa-header-top-left">
+                                    <!-- start language -->
+                                    <div class="aa-language">
+                                        <div class="dropdown">
+                                            <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                <img src="img/flag/english.jpg" alt="english flag">ENGLISH
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- / language -->
+
+                                    <!-- start currency -->
+                                    <div class="aa-currency">
+                                        <div class="dropdown">
+                                            <a class="btn dropdown-toggle" href="#" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                <i class="fa fa-money"></i>LKR
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <!-- / currency -->
+                                    <!-- start cellphone -->
+                                    <div class="cellphone hidden-xs">
+                                        <p><span class="fa fa-phone"></span>+94-70-270-6900</p>
+                                    </div>
+                                    <!-- / cellphone -->
+                                </div>
+                                <!-- / header top left -->
+                                <div class="aa-header-top-right">
+                                    <ul class="aa-head-top-nav-right">
+                                        <li><a href="account">My Account</a></li>
+                                        <li class="hidden-xs"><a href="wishlist">Wishlist</a></li>
+                                        <li class="hidden-xs"><a href="cart">My Cart</a></li>
+                                        <li class="hidden-xs"><a href="checkout">Checkout</a></li>
+                                        <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- .subfooter end -->
+            <!-- / header top  -->
 
-        </footer>
-        <!-- footer end -->
-         
-        <!-- JavaScript files placed at the end of the document so the pages load faster
-        ================================================== -->
-        <!-- Jquery and Bootstap core js files -->
-        <script type="text/javascript" src="plugins/jquery.min.js"></script>
-        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+            <!-- start header bottom  -->
+            <div class="aa-header-bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="aa-header-bottom-area">
+                                <!-- logo  -->
+                                <div class="aa-logo">
+                                    <!-- Text based logo -->
+                                    <a href="index.php">
+                                        <span class="fa fa-shirtsinbulk"></span>
+                                        <p>Dux<strong>Tela</strong> <span>Partner of your exclusive soul</span></p>
+                                    </a>
+                                    <!-- img based logo -->
+                                    <!-- <a href="index.html"><img src="img/logo.jpg" alt="logo img"></a> -->
+                                </div>
+                                
+                                <div id="status"> </div>
+                                
+                                <button onclick="getInfo()">Get Info</button>
+                                <button onclick="login()" >Login</button>
+                                <!-- / logo  -->
+                                <!-- cart box -->
+                                <!--<div class="aa-cartbox">
+                                  <a class="aa-cart-link" href="#">
+                                    <span class="fa fa-"></span>
+                                    <span class="aa-cart-title">SHOPPING CART</span>
+                                    <span class="aa-cart-">2</span>
+                                  </a>
+                                  <div class="aa-cartbox-summary">
+                                    <ul>
+                                      <li>
+                                        <a class="aa-cartbox-img" href="#"><img src="img/woman-small-2.jpg" alt="img"></a>
+                                        <div class="aa-cartbox-info">
+                                          <h4><a href="#">Product Name</a></h4>
+                                          <p>1 x $250</p>
+                                        </div>
+                                        <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
+                                      </li>
+                                      <li>
+                                        <a class="aa-cartbox-img" href="#"><img src="img/woman-small-1.jpg" alt="img"></a>
+                                        <div class="aa-cartbox-info">
+                                          <h4><a href="#">Product Name</a></h4>
+                                          <p>1 x $250</p>
+                                        </div>
+                                        <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
+                                      </li>                    
+                                      <li>
+                                        <span class="aa-cartbox-total-title">
+                                          Total
+                                        </span>
+                                        <span class="aa-cartbox-total-price">
+                                          $500
+                                        </span>
+                                      </li>
+                                    </ul>
+                                    <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.html">Checkout</a>
+                                  </div>
+                                </div>-->
+                                <!-- / cart box -->
+                                <!-- search box -->
 
-        <!-- Modernizr javascript -->
-        <script type="text/javascript" src="plugins/modernizr.js"></script>
+                                <!--<div class="aa-search-box">
+                                  <form action="">
+                                    <input type="text" name="" id="" placeholder="Search here ex. 'man' ">
+                                    <button type="submit"><span class="fa fa-search"></span></button>
+                                  </form>
+                                </div>-->
+                                <!-- / search box -->             
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- / header bottom  -->
+        </header>
+        <!-- / header section -->
+        <!-- menu -->
+        <section id="menu">
+            <div class="container">
+                <div class="menu-area">
+                    <!-- Navbar -->
+                    <div class="navbar navbar-default" role="navigation">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>          
+                        </div>
+                        <div class="navbar-collapse collapse">
+                            <!-- Left nav -->
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.php">Home</a></li>
+                                <li><a href="admin_index.php">Men <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">  
+                                        <li><a href="#">Tshirt<span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Polo</a></li>
+                                                <li><a href="#">Round neck</a></li>
+                                                <li><a href="#">Hoodies</a></li>                                      
+                                            </ul>
+                                        </li>
+                                        <li><a href="#">Shirts<span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Formal</a></li>
+                                                <li><a href="#">Standard</a></li>                                           
+                                            </ul>
 
-        <!-- Isotope javascript -->
-        <script type="text/javascript" src="plugins/isotope/isotope.pkgd.min.js"></script>
+                                        </li>
 
-        <!-- Backstretch javascript -->
-        <script type="text/javascript" src="plugins/jquery.backstretch.min.js"></script>
 
-        <!-- Appear javascript -->
-        <script type="text/javascript" src="plugins/jquery.appear.js"></script>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Women <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">  
 
-        <!-- Initialization of Plugins -->
-        <script type="text/javascript" src="js/template.js"></script>
+                                        <li><a href="#">Trousers</a></li>    
+                                        <li><a href="#">Sports</a></li>             
+                                        <li><a href="#">Sarees</a></li>
+                                        <li><a href="#">Shoes</a></li>
+                                        <li><a href="#">And more.. <span class="caret"></span></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="#">Sleep Wear</a></li>
+                                                <li><a href="#">And more.. <span class="caret"></span></a>
+                                                    <ul class="dropdown-menu">
 
-        <!-- Custom Scripts -->
-        <script type="text/javascript" src="js/custom.js"></script>
+                                                        <li><a href="#">Jeans</a></li>
+                                                        <li><a href="#">Polo T-Shirts</a></li>
+                                                        <li><a href="#">SKirts</a></li>
+                                                        <li><a href="#">Jackets</a></li>
+                                                        <li><a href="#">Tops</a></li>                      
+                                                    </ul>
+                                                </li>                   
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
 
-    </body>
-</html>
 
-<script>
-    $(document).ready(function(){ 
-    $('body').find('img[src$="https://cdn.rawgit.com/000webhost/logo/e9bd13f7/footer-powered-by-000webhost-white2.png"]').remove();
-   }); 
-</script>
+                                <li><a href="popupCust.php"><button class="button">Customization</button></a></li>
+                                <li><a href="#">All Products </a>
+                               <!--<li><a href="#">Digital <span class="caret"></span></a>
+                                  <ul class="dropdown-menu">                
+                                    <li><a href="#">Camera</a></li>
+                                    <li><a href="#">Mobile</a></li>       
+                                    <li><a href="#">Tablet</a></li>
+                                    <li><a href="#">Laptop</a></li>                                                
+                                    <li><a href="#">Accesories</a></li>                
+                                  </ul>
+                                </li>
+                                <li><a href="#">Furniture</a></li>            
+                                <li><a href="blog-archive.html">Blog <span class="caret"></span></a>
+                                  <ul class="dropdown-menu">                
+                                    <li><a href="blog-archive.html">Blog Style 1</a></li>
+                                    <li><a href="blog-archive-2.html">Blog Style 2</a></li>
+                                    <li><a href="blog-single.html">Blog Single</a></li>                
+                                  </ul>
+                                </li>
+                                <li><a href="contact.html">Contact</a></li>
+                                <li><a href="#">Pages <span class="caret"></span></a>
+                                  <ul class="dropdown-menu">                
+                                    <li><a href="product.html">Shop Page</a></li>
+                                    <li><a href="product-detail.html">Shop Single</a></li>                
+                                    <li><a href="404.html">404 Page</a></li>                
+                                  </ul>
+                                </li>
+                              </ul>
+                            </div><!--/.nav-collapse -->
+                                    </div>
+                                    </div>       
+                                    </div>
+                                    </section>
+                                    <!-- / menu -->
+
+                                    <!-- Start slider -->
+                                    <section id="aa-slider">
+                                        <div class="aa-slider-area">
+                                            <div id="sequence" class="seq">
+                                                <ul class="seq-canvas">
+                                                    <!-- single slide item -->
+                                                    <li>
+                                                        <div class="seq-model">
+                                                            <img data-seq src="img/slider/1.jpg" alt="Men slide img" />
+                                                        </div>
+                                                        <div class="seq-title">
+                                                            <span data-seq>Save Up to 75% Off</span>                
+                                                            <h2 data-seq>Men Collection</h2>                
+                                                            <p data-seq>klanfklanfnklanfklanklfn alfnlanfkla</p>
+                                                            <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
+                                                        </div>
+                                                    </li>
+                                                    <!-- single slide item -->
+                                                    <li>
+                                                        <div class="seq-model">
+                                                            <img data-seq src="img/slider/2.jpg" alt="Wristwatch slide img" />
+                                                        </div>
+                                                        <div class="seq-title">
+                                                            <span data-seq>Save Up to 40% Off</span>                
+                                                            <h2 data-seq>Customized Collection</h2>                
+                                                            <p data-seq>sdnksndklnl aflanfln</p>
+                                                            <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
+                                                        </div>
+                                                    </li>
+                                                    <!-- single slide item -->
+                                                    <li>
+                                                        <div class="seq-model">
+                                                            <img data-seq src="img/slider/3.jpg" alt="Women Jeans slide img" />
+                                                        </div>
+                                                        <div class="seq-title">
+                                                            <span data-seq>Save Up to 75% Off</span>                
+                                                            <h2 data-seq>Jeans Collection</h2>                
+                                                            <p data-seq>nfklanlf lnfaf.</p>
+                                                            <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
+                                                        </div>
+                                                    </li>
+                                                    <!-- single slide item -->           
+                                                    <li>
+                                                        <div class="seq-model">
+                                                            <img data-seq src="img/slider/4.jpg" alt="Shoes slide img" />
+                                                        </div>
+                                                        <div class="seq-title">
+                                                            <span data-seq>Save Up to 75% Off</span>                
+                                                            <h2 data-seq>Exclusive Shirts</h2>                
+                                                            <p data-seq>snkln nflanf anfnafpa </p>
+                                                            <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
+                                                        </div>
+                                                    </li>
+                                                    <!-- single slide item -->  
+                                                    <li>
+                                                        <div class="seq-model">
+                                                            <img data-seq src="img/slider/5.jpg" alt="Male Female slide img" />
+                                                        </div>
+                                                        <div class="seq-title">
+                                                            <span data-seq>Save Up to 50% Off</span>                
+                                                            <h2 data-seq>Best Collection</h2>                
+                                                            <p data-seq>sklsnfklnf andklandklajwpo nnafpojaf</p>
+                                                            <a data-seq href="#" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
+                                                        </div>
+                                                    </li>                   
+                                                </ul>
+                                                <!-- slider navigation btn -->
+                                                <!--
+                                                        <fieldset class="seq-nav" aria-controls="sequence" aria-label="Slider buttons">
+                                                          <a type="button" class="seq-prev" aria-label="Previous"><span class="fa fa-angle-left"></span></a>
+                                                          <a type="button" class="seq-next" aria-label="Next"><span class="fa fa-angle-right"></span></a>
+                                                        </fieldset>
+                                                -->
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <!-- / slider -->
+                                    <!-- Start Promo section -->
+                                    <section id="aa-promo">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="aa-promo-area">
+                                                        <div class="row">
+                                                            <!-- promo left -->
+                                                            <div class="col-md-5 no-padding">                
+                                                                <div class="aa-promo-left">
+                                                                    <div class="aa-promo-banner">                    
+                                                                        <img src="img/promo-banner-1.jpg" alt="img">                    
+                                                                        <div class="aa-prom-content">
+                                                                            <span>75% Off</span>
+                                                                            <h4><a href="#">For Women</a></h4>                      
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- promo right -->
+                                                            <div class="col-md-7 no-padding">
+                                                                <div class="aa-promo-right">
+                                                                    <div class="aa-single-promo-right">
+                                                                        <div class="aa-promo-banner">                      
+                                                                            <img src="img/promo-banner-3.jpg" alt="img">                      
+                                                                            <div class="aa-prom-content">
+                                                                                <span>Exclusive Item</span>
+                                                                                <h4><a href="#">For Men</a></h4>                        
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="aa-single-promo-right">
+                                                                        <div class="aa-promo-banner">                      
+                                                                            <img src="img/promo-banner-2.jpg" alt="img">                      
+                                                                            <div class="aa-prom-content">
+                                                                                <span>Sale Off</span>
+                                                                                <h4><a href="#">On Shoes</a></h4>                        
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="aa-single-promo-right">
+                                                                        <div class="aa-promo-banner">                      
+                                                                            <img src="img/promo-banner-4.jpg" alt="img">                      
+                                                                            <div class="aa-prom-content">
+                                                                                <span>New Arrivals</span>
+                                                                                <h4><a href="#">For Kids</a></h4>                        
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="aa-single-promo-right">
+                                                                        <div class="aa-promo-banner">                      
+                                                                            <img src="img/promo-banner-5.jpg" alt="img">                      
+                                                                            <div class="aa-prom-content">
+                                                                                <span>25% Off</span>
+                                                                                <h4><a href="#">For Bags</a></h4>                        
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <!-- / Promo section -->
+                                    <!-- Products section -->
+                                    <section id="aa-product">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="row">
+                                                        <div class="aa-product-area">
+                                                            <div class="aa-product-inner">
+                                                                <!-- start prduct navigation -->
+                                                                <ul class="nav nav-tabs aa-products-tab">
+                                                                    <li class="active"><a href="#men" data-toggle="tab">Men</a></li>
+                                                                    <li><a href="#women" data-toggle="tab">Women</a></li>
+                                                                    <li><a href="#sports" data-toggle="tab">Sports</a></li>
+                                                                    <li><a href="#customized" data-toggle="tab">Customized</a></li>
+                                                                </ul>
+                                                                <!-- Tab panes -->
+                                                                <div class="tab-content">
+                                                                    <!-- Start men product category -->
+                                                                    <div class="tab-pane fade in active" id="men">
+                                                                        <ul class="aa-product-catg">
+                                                                            <!-- start single product item -->
+                                                                            <li>
+                                                                                <figure>
+                                                                                    <a class="aa-product-img" href="#"><img src="img/man/polo-shirt-2.png" alt="polo shirt img"></a>
+                                                                                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                                                    <figcaption>
+                                                                                        <h4 class="aa-product-title"><a href="#">Polo T-Shirt</a></h4>
+                                                                                        <span class="aa-product-price">$45.50</span>
+                                                                                    </figcaption>
+                                                                                </figure>                        
+                                                                                <div class="aa-product-hvr-content">
+                                                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                                                    <a href="product-detail.html" ><span class="fa fa-search"></span></a>                          
+                                                                                </div>
+                                                                                <!-- product badge -->
+                                                                                <!-- <span class="aa-badge aa-sale" href="#">SALE!</span>-->
+                                                                            </li>
+                                                                            <!-- start single product item -->
+                                                                            <li>
+                                                                                <figure>
+                                                                                    <a class="aa-product-img" href="#"><img src="img/man/t-shirt-1.png" alt="polo shirt img"></a>
+                                                                                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                                                    <figcaption>
+                                                                                        <h4 class="aa-product-title"><a href="#">T-Shirt</a></h4>
+                                                                                        <span class="aa-product-price">$45.50</span>
+                                                                                    </figcaption>
+                                                                                </figure>                         
+                                                                                <div class="aa-product-hvr-content">
+                                                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                                                    <a href="product-detail.html" ><span class="fa fa-search"></span></a>                          
+                                                                                </div>
+                                                                            </li>
+                                                                            <!-- start single product item -->
+                                                                            <li>
+                                                                                <figure>
+                                                                                    <a class="aa-product-img" href="#"><img src="img/man/polo-shirt-1.png" alt="polo shirt img"></a>
+                                                                                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                                                    <figcaption>
+                                                                                        <h4 class="aa-product-title"><a href="#">Polo T-Shirt</a></h4>
+                                                                                        <span class="aa-product-price">$45.50</span>
+                                                                                    </figcaption>
+                                                                                </figure>                         
+                                                                                <div class="aa-product-hvr-content">
+                                                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                                                    <a href="product-detail.html" ><span class="fa fa-search"></span></a>                          
+                                                                                </div>
+                                                                            </li>
+                                                                            <!-- start single product item -->
+                                                                            <li>
+                                                                                <figure>
+                                                                                    <a class="aa-product-img" href="#"><img src="img/man/polo-shirt-4.png" alt="polo shirt img"></a>
+                                                                                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                                                    <figcaption>
+                                                                                        <h4 class="aa-product-title"><a href="#">Polo T-Shirt</a></h4>
+                                                                                        <span class="aa-product-price">$45.50</span>
+                                                                                    </figcaption>
+                                                                                </figure>                          
+                                                                                <div class="aa-product-hvr-content">
+                                                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                                                    <a href="product-detail.html" ><span class="fa fa-search"></span></a>                          
+                                                                                </div>
+                                                                            </li>
+                                                                            <!-- start single product item -->
+                                                                            <li>
+                                                                                <figure>
+                                                                                    <a class="aa-product-img" href="#"><img src="img/man/polo-shirt-5.png" alt="polo shirt img"></a>
+                                                                                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                                                    <figcaption>
+                                                                                        <h4 class="aa-product-title"><a href="#">T-Shirt</a></h4>
+                                                                                        <span class="aa-product-price">$45.50</span>
+                                                                                    </figcaption>
+                                                                                </figure>                          
+                                                                                <div class="aa-product-hvr-content">
+                                                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                                                    <a href="product-detail.html" ><span class="fa fa-search"></span></a>                          
+                                                                                </div>
+                                                                            </li>
+                                                                            <!-- start single product item -->
+                                                                            <li>
+                                                                                <figure>
+                                                                                    <a class="aa-product-img" href="#"><img src="img/man/polo-shirt-6.png" alt="polo shirt img"></a>
+                                                                                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                                                    <figcaption>
+                                                                                        <h4 class="aa-product-title"><a href="#">Polo T-Shirt</a></h4>
+                                                                                        <span class="aa-product-price">$45.50</span>
+                                                                                    </figcaption>
+                                                                                </figure>                          
+                                                                                <div class="aa-product-hvr-content">
+                                                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                                                    <a href="product-detail.html" ><span class="fa fa-search"></span></a>                          
+                                                                                </div>
+                                                                            </li>
+                                                                            <!-- start single product item -->
+                                                                            <li>
+                                                                                <figure>
+                                                                                    <a class="aa-product-img" href="#"><img src="img/man/polo-shirt-2.png" alt="polo shirt img"></a>
+                                                                                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                                                    <figcaption>
+                                                                                        <h4 class="aa-product-title"><a href="#">Polo T-Shirt</a></h4>
+                                                                                        <span class="aa-product-price">$45.50</span>
+                                                                                    </figcaption>
+                                                                                </figure>                          
+                                                                                <div class="aa-product-hvr-content">
+                                                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                                                    <a href="product-detail.html" ><span class="fa fa-search"></span></a>                          
+                                                                                </div>
+                                                                            </li>
+                                                                            <!-- start single product item -->
+                                                                            <li>
+                                                                                <figure>
+                                                                                    <a class="aa-product-img" href="#"><img src="img/man/t-shirt-1.png" alt="polo shirt img"></a>
+                                                                                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                                                    <figcaption>
+                                                                                        <h4 class="aa-product-title"><a href="#">T-Shirt</a></h4>
+                                                                                        <span class="aa-product-price">$45.50</span>
+                                                                                    </figcaption>
+                                                                                </figure>                         
+                                                                                <div class="aa-product-hvr-content">
+                                                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                                                    <a href="product-detail.html" ><span class="fa fa-search"></span></a>                          
+                                                                                </div>
+                                                                                <!-- product badge -->
+                                                                            </li>                        
+                                                                        </ul>
+                                                                        <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-arrow-right"></span></a>
+                                                                    </div>
+                                                                    <!-- / men product category -->
+                                                                    <!-- start women product category -->
+                                                                    <div class="tab-pane fade" id="women">
+                                                                        <ul class="aa-product-catg">
+                                                                            <!-- start single product item -->
+                                                                            <li>
+                                                                                <figure>
+                                                                                    <a class="aa-product-img" href="#"><img src="img/women/girl-1.png" alt="polo shirt img"></a>
+                                                                                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                                                    <figcaption>
+                                                                                        <h4 class="aa-product-title"><a href="#">This is Title</a></h4>
+                                                                                        <span class="aa-product-price">$45.50</span>
+                                                                                    </figcaption>
+                                                                                </figure>                         
+                                                                                <div class="aa-product-hvr-content">
+                                                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                                                    <a href="product-detail.html" ><span class="fa fa-search"></span></a>                          
+                                                                                </div>
+
+                                                                            </li>
+                                                                            <!-- start single product item -->
+                                                                            <li>
+                                                                                <figure>
+                                                                                    <a class="aa-product-img" href="#"><img src="img/women/girl-2.png" alt="polo shirt img"></a>
+                                                                                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                                                    <figcaption>
+                                                                                        <h4 class="aa-product-title"><a href="#">Lorem ipsum doller</a></h4>
+                                                                                        <span class="aa-product-price">$45.50</span>
+                                                                                    </figcaption>
+                                                                                </figure>                         
+                                                                                <div class="aa-product-hvr-content">
+                                                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                                                    <a href="product-detail.html" ><span class="fa fa-search"></span></a>                          
+                                                                                </div>
+                                                                            </li>
+                                                                            <!-- start single product item -->
+                                                                            <li>
+                                                                                <figure>
+                                                                                    <a class="aa-product-img" href="#"><img src="img/women/girl-3.png" alt="polo shirt img"></a>
+                                                                                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                                                    <figcaption>
+                                                                                        <h4 class="aa-product-title"><a href="#">Lorem ipsum doller</a></h4>
+                                                                                        <span class="aa-product-price">$45.50</span>
+                                                                                    </figcaption>
+                                                                                </figure>                         
+                                                                                <div class="aa-product-hvr-content">
+                                                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                                                    <a href="product-detail.html" ><span class="fa fa-search"></span></a>                          
+                                                                                </div>
+                                                                            </li>
+                                                                            <!-- start single product item -->
+                                                                            <li>
+                                                                                <figure>
+                                                                                    <a class="aa-product-img" href="#"><img src="img/women/girl-4.png" alt="polo shirt img"></a>
+                                                                                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                                                    <figcaption>
+                                                                                        <h4 class="aa-product-title"><a href="#">Lorem ipsum doller</a></h4>
+                                                                                        <span class="aa-product-price">$45.50</span>
+                                                                                    </figcaption>
+                                                                                </figure>                          
+                                                                                <div class="aa-product-hvr-content">
+                                                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                                                    <a href="product-detail.html" ><span class="fa fa-search"></span></a>                          
+                                                                                </div>
+                                                                            </li>
+                                                                            <!-- start single product item -->
+                                                                            <li>
+                                                                                <figure>
+                                                                                    <a class="aa-product-img" href="#"><img src="img/women/girl-5.png" alt="polo shirt img"></a>
+                                                                                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                                                    <figcaption>
+                                                                                        <h4 class="aa-product-title"><a href="#">Lorem ipsum doller</a></h4>
+                                                                                        <span class="aa-product-price">$45.50</span>
+                                                                                    </figcaption>
+                                                                                </figure>
+
+                                                                                <div class="aa-product-hvr-content">
+                                                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                                                    <a href="product-detail.html" ><span class="fa fa-search"></span></a>                          
+                                                                                </div>
+                                                                            </li>
+                                                                            <!-- start single product item -->
+                                                                            <li>
+                                                                                <figure>
+                                                                                    <a class="aa-product-img" href="#"><img src="img/women/girl-6.png" alt="polo shirt img"></a>
+                                                                                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                                                    <figcaption>
+                                                                                        <h4 class="aa-product-title"><a href="#">Lorem ipsum doller</a></h4>
+                                                                                        <span class="aa-product-price">$45.50</span>
+                                                                                    </figcaption>
+                                                                                </figure>                          
+                                                                                <div class="aa-product-hvr-content">
+                                                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                                                    <a href="product-detail.html" ><span class="fa fa-search"></span></a>                          
+                                                                                </div>
+                                                                            </li>
+                                                                            <!-- start single product item -->
+                                                                            <li>
+                                                                                <figure>
+                                                                                    <a class="aa-product-img" href="#"><img src="img/women/girl-7.png" alt="polo shirt img"></a>
+                                                                                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                                                    <figcaption>
+                                                                                        <h4 class="aa-product-title"><a href="#">Lorem ipsum doller</a></h4>
+                                                                                        <span class="aa-product-price">$45.50</span>
+                                                                                    </figcaption>
+                                                                                </figure>                          
+                                                                                <div class="aa-product-hvr-content">
+                                                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                                                    <a href="product-detail.html" ><span class="fa fa-search"></span></a>                          
+                                                                                </div>
+                                                                            </li>
+                                                                            <!-- start single product item -->
+                                                                            <li>
+                                                                                <figure>
+                                                                                    <a class="aa-product-img" href="#"><img src="img/women/girl-1.png" alt="polo shirt img"></a>
+                                                                                    <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                                                    <figcaption>
+                                                                                        <h4 class="aa-product-title"><a href="#">Lorem ipsum doller</a></h4>
+                                                                                        <span class="aa-product-price">$45.50</span>
+                                                                                    </figcaption>
+                                                                                </figure>                         
+                                                                                <div class="aa-product-hvr-content">
+                                                                                    <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                                                                                    <a href="product-detail.html" ><span class="fa fa-search"></span></a>                          
+                                                                                </div>
+                                                                            </li>                        
+                                                                        </ul>
+                                                                        <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-arrow-right"></span></a>
+                                                                    </div>
+                                                                    <!-- / women product category -->
+                                                                    <!-- start sports product category -->
+                                                                    <div class="tab-pane fade" id="sports">
+
+
+                                                                    </div>
+                                                                    <!-- / sports product category -->
+                                                                    <!-- start electronic product category -->
+                                                                    <div class="tab-pane fade" id="electronics">
+
+                                                                        </ul>
+                                                                        <a class="aa-browse-btn" href="#">Browse all Product <span class="fa fa-arrow-right"></span></a>
+                                                                    </div>
+                                                                    <!-- / electronic product category -->
+                                                                </div>
+                                                                <!-- quick view modal -->                  
+                                                                <div class="modal fade" id="quick-view-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                                    <div class="modal-dialog">
+                                                                        <div class="modal-content">                      
+                                                                            <div class="modal-body">
+                                                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                                                <div class="row">
+                                                                                    <!-- Modal view slider -->
+                                                                                    <div class="col-md-6 col-sm-6 col-xs-12">                              
+                                                                                        <div class="aa-product-view-slider">                                
+                                                                                            <div class="simpleLens-gallery-container" id="demo-1">
+                                                                                                <div class="simpleLens-container">
+                                                                                                    <div class="simpleLens-big-image-container">
+                                                                                                        <a class="simpleLens-lens-image" data-lens-image="img/view-slider/large/polo-shirt-1.png">
+                                                                                                            <img src="img/view-slider/medium/polo-shirt-1.png" class="simpleLens-big-image">
+                                                                                                        </a>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                                <div class="simpleLens-thumbnails-container">
+                                                                                                    <a href="#" class="simpleLens-thumbnail-wrapper"
+                                                                                                       data-lens-image="img/view-slider/large/polo-shirt-1.png"
+                                                                                                       data-big-image="img/view-slider/medium/polo-shirt-1.png">
+                                                                                                        <img src="img/view-slider/thumbnail/polo-shirt-1.png">
+                                                                                                    </a>                                    
+                                                                                                    <a href="#" class="simpleLens-thumbnail-wrapper"
+                                                                                                       data-lens-image="img/view-slider/large/polo-shirt-3.png"
+                                                                                                       data-big-image="img/view-slider/medium/polo-shirt-3.png">
+                                                                                                        <img src="img/view-slider/thumbnail/polo-shirt-3.png">
+                                                                                                    </a>
+
+                                                                                                    <a href="#" class="simpleLens-thumbnail-wrapper"
+                                                                                                       data-lens-image="img/view-slider/large/polo-shirt-4.png"
+                                                                                                       data-big-image="img/view-slider/medium/polo-shirt-4.png">
+                                                                                                        <img src="img/view-slider/thumbnail/polo-shirt-4.png">
+                                                                                                    </a>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <!-- Modal view content -->
+                                                                                    <div class="col-md-6 col-sm-6 col-xs-12">
+                                                                                        <div class="aa-product-view-content">
+                                                                                            <h3>T-Shirt</h3>
+                                                                                            <div class="aa-price-block">
+                                                                                                <span class="aa-product-view-price">$34.99</span>
+                                                                                                <p class="aa-product-avilability">Avilability: <span>In stock</span></p>
+                                                                                            </div>
+                                                                                            <p>sjbfjksf iafiahfi aia fhiahfiap cna ioa goofho hbvbjk nvls afj vsioiosv vjnvjsio vsvsvznmcnklafpghpe  vnidnvipfa gpagjpalmo48593949 gw ioshgio092urfij f4\g5fba fi aio3u4u9 afioaifq30y28y5 f fiafi!</p>
+                                                                                            <h4>Size</h4>
+                                                                                            <div class="aa-prod-view-size">
+                                                                                                <a href="#">XS</a>
+                                                                                                <a href="#">S</a>
+                                                                                                <a href="#">M</a>
+                                                                                                <a href="#">L</a>
+                                                                                                <a href="#">XL</a>
+                                                                                                <a href="#">XXL</a>
+                                                                                            </div>
+                                                                                            <div class="aa-prod-quantity">
+                                                                                                <form action="">
+                                                                                                    <select name="" id="">
+                                                                                                        <option value="0" selected="1">1</option>
+                                                                                                        <option value="1">2</option>
+                                                                                                        <option value="2">3</option>
+                                                                                                        <option value="3">4</option>
+                                                                                                        <option value="4">5</option>
+                                                                                                        <option value="5">6</option>
+                                                                                                    </select>
+                                                                                                </form>
+                                                                                                <p class="aa-prod-category">
+                                                                                                    Category: <a href="#">Polo T-Shirt</a>
+                                                                                                </p>
+                                                                                            </div>
+                                                                                            <div class="aa-prod-view-bottom">
+                                                                                                <a href="#" class="aa-add-to-cart-btn"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                                                                                                <a href="#" class="aa-add-to-cart-btn">View Details</a>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>                        
+                                                                        </div><!-- /.modal-content -->
+                                                                    </div><!-- /.modal-dialog -->
+                                                                </div><!-- / quick view modal -->              
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <!-- / Products section -->
+                                    <!-- banner section -->
+                                    <!--<section id="aa-banner">
+                                      <div class="container">
+                                        <div class="row">
+                                          <div class="col-md-12">        
+                                            <div class="row">
+                                              <div class="aa-banner-area">
+                                              <a href="#"><img src="img/fashion-banner.jpg" alt="fashion banner img"></a>
+                                            </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </section>-->
+
+                                    <!-- Support section -->
+                                    <section id="aa-support">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="aa-support-area">
+                                                        <!-- single support -->
+                                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                                            <div class="aa-support-single">
+                                                                <span class="fa fa-truck"></span>
+                                                                <h4>FREE SHIPPING</h4>
+                                                                <P>Free shipping within Colombo limits</P>
+                                                            </div>
+                                                        </div>
+                                                        <!-- single support -->
+                                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                                            <div class="aa-support-single">
+                                                                <span class="fa fa-clock-o"></span>
+                                                                <h4>30 DAYS MONEY BACK</h4>
+                                                                <P>anfklanf afiajfiaj ajiajfpa</P>
+                                                            </div>
+                                                        </div>
+                                                        <!-- single support -->
+                                                        <div class="col-md-4 col-sm-4 col-xs-12">
+                                                            <div class="aa-support-single">
+                                                                <span class="fa fa-phone"></span>
+                                                                <h4>SUPPORT 24/7</h4>
+                                                                <P>24/7 support and inquiries through Facebook and Email</P>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <!-- / Support section -->
+                                    <!-- Testimonial -->
+                                    <section id="aa-testimonial">  
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="aa-testimonial-area">
+                                                        <ul class="aa-testimonial-slider">
+                                                            <!-- single slide -->
+                                                            <li>
+                                                                <div class="aa-testimonial-single">
+                                                                    <img class="aa-testimonial-img" src="img/testimonial-img-2.jpg" alt="testimonial img">
+                                                                    <span class="fa fa-quote-left aa-testimonial-quote"></span>
+                                                                    <p>shlshvsiv vhioshioao aaiaf oap fjpoaahviab aifap fhiaf pa.</p>
+                                                                    <div class="aa-testimonial-info">
+                                                                        <p>Gandhara</p>
+                                                                        <span>CEO</span>
+                                                                        <a href="#">Gandhara.com</a>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <!-- single slide -->
+                                                            <li>
+                                                                <div class="aa-testimonial-single">
+                                                                    <img class="aa-testimonial-img" src="img/testimonial-img-2.jpg" alt="testimonial img">
+                                                                    <span class="fa fa-quote-left aa-testimonial-quote"></span>
+                                                                    <p>shlshvsiv vhioshioao aaiaf oap fjpoaahviab aifap fhiaf pa.</p>
+                                                                    <div class="aa-testimonial-info">
+                                                                        <p>Gandhara</p>
+                                                                        <span>Designer</span>
+                                                                        <a href="#">Dribble.com</a>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                            <!-- single slide -->
+                                                            <li>
+                                                                <div class="aa-testimonial-single">
+                                                                    <img class="aa-testimonial-img" src="img/testimonial-img-2.jpg" alt="testimonial img">
+                                                                    <span class="fa fa-quote-left aa-testimonial-quote"></span>
+                                                                    <p>shlshvsiv vhioshioao aaiaf oap fjpoaahviab aifap fhiaf pa.</p>
+                                                                    <div class="aa-testimonial-info">
+                                                                        <p>BLUEWHALE</p>
+                                                                        <span>CTO</span>
+                                                                        <a href="#">BLUEWHALE.com</a>
+                                                                    </div>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <!-- / Testimonial -->
+                                    <!-- Client Brand -->
+                                    <section id="aa-client-brand">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="aa-client-brand-area">
+                                                        <ul class="aa-client-brand-slider">
+                                                            <li><a href="#"><img src="img/client-brand-java.png" alt="java img"></a></li>
+                                                            <li><a href="#"><img src="img/client-brand-jquery.png" alt="jquery img"></a></li>
+                                                            <li><a href="#"><img src="img/client-brand-html5.png" alt="html5 img"></a></li>
+                                                            <li><a href="#"><img src="img/client-brand-css3.png" alt="css3 img"></a></li>
+                                                            <li><a href="#"><img src="img/client-brand-wordpress.png" alt="wordPress img"></a></li>
+                                                            <li><a href="#"><img src="img/client-brand-joomla.png" alt="joomla img"></a></li>
+                                                            <li><a href="#"><img src="img/client-brand-java.png" alt="java img"></a></li>
+                                                            <li><a href="#"><img src="img/client-brand-jquery.png" alt="jquery img"></a></li>
+                                                            <li><a href="#"><img src="img/client-brand-html5.png" alt="html5 img"></a></li>
+                                                            <li><a href="#"><img src="img/client-brand-css3.png" alt="css3 img"></a></li>
+                                                            <li><a href="#"><img src="img/client-brand-wordpress.png" alt="wordPress img"></a></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <!-- / Client Brand -->
+
+                                    <!-- footer -->  
+                                    <footer id="aa-footer">
+                                        <!-- footer bottom -->
+                                        <div class="aa-footer-top">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="aa-footer-top-area">
+                                                            <div class="row">
+                                                                <div class="col-md-3 col-sm-6">
+                                                                    <div class="aa-footer-widget">
+                                                                        <h3>Main Menu</h3>
+                                                                        <ul class="aa-footer-nav">
+                                                                            <li><a href="#">Home</a></li>
+                                                                            <li><a href="#">Our Products</a></li>
+                                                                            <li><a href="#">Contact Us</a></li>
+                                                                        </ul>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 col-sm-6">
+                                                                    <div class="aa-footer-widget">
+                                                                        <div class="aa-footer-widget">
+                                                                            <h3>Knowledge Base</h3>
+                                                                            <ul class="aa-footer-nav">
+                                                                                <li><a href="#">Delivery</a></li>
+                                                                                <li><a href="#">Returns</a></li>
+                                                                                <li><a href="#">Discount</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 col-sm-6">
+                                                                    <div class="aa-footer-widget">
+                                                                        <div class="aa-footer-widget">
+                                                                            <h3>Useful Links</h3>
+                                                                            <ul class="aa-footer-nav">
+                                                                                <li><a href="#">Customers</a></li>
+                                                                                <li><a href="#">Reviews</a></li>
+                                                                            </ul>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-3 col-sm-6">
+                                                                    <div class="aa-footer-widget">
+                                                                        <div class="aa-footer-widget">
+                                                                            <h3>Contact Us</h3>
+                                                                            <address>
+                                                                                <p> Address</p>
+                                                                                <p><span class="fa fa-phone"></span>+94-70-270-6900</p>
+                                                                                <p><span class="fa fa-envelope"></span>info@duxtela.com</p>
+                                                                            </address>
+                                                                            <div class="aa-footer-social">
+                                                                                <a href="#"><span class="fa fa-facebook"></span></a>
+                                                                                <a href="#"><span class="fa fa-instagram"></span></a>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- footer-bottom -->
+                                        <div class="aa-footer-bottom">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <div class="col-md-12">
+                                                        <div class="aa-footer-bottom-area">
+                                                            <p><span class="fa fa-copyright"> 2017, Duxtela | <a href="http://www.facebook.com/inovoratech">Inovora Technologies</a></span></p>
+                                                            <div class="aa-footer-payment">
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </footer>
+                                    <!-- / footer -->
+
+                                    <!-- Login Modal -->  
+                                    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">                      
+                                                <div class="modal-body">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    <h4>Login or Register</h4>
+                                                    <form class="aa-login-form" action="">
+                                                        <label for="">Email address<span>*</span></label>
+                                                        <input type="text" placeholder="Username or email">
+                                                        <label for="">Password<span>*</span></label>
+                                                        <input type="password" placeholder="Password">
+                                                        <button class="aa-browse-btn" type="submit">Login</button>
+                                                        <div id="status"></div>
+                                                        <label for="rememberme" class="rememberme"><div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div> </label>
+                                                        <p class="aa-lost-password"><a href="#">Lost your password?</a></p>
+
+                                                        <!--            <div class="aa-register-now">
+                                                                      <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="false" data-use-continue-as="false"></div>
+                                                                    </div>-->
+                                                        <div class="aa-register-now">
+                                                            Don't have an account?<a href="account.html">Register now!</a>
+                                                        </div>
+                                                    </form>
+                                                </div>                        
+                                            </div><!-- /.modal-content -->
+                                        </div><!-- /.modal-dialog -->
+                                    </div>    
+
+                                    <!-- jQuery library -->
+                                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                                    <!-- Include all compiled plugins (below), or include individual files as needed -->
+                                    <script src="js/bootstrap.js"></script>  
+                                    <!-- SmartMenus jQuery plugin -->
+                                    <script type="text/javascript" src="js/jquery.smartmenus.js"></script>
+                                    <!-- SmartMenus jQuery Bootstrap Addon -->
+                                    <script type="text/javascript" src="js/jquery.smartmenus.bootstrap.js"></script>  
+                                    <!-- Product view slider -->
+                                    <script type="text/javascript" src="js/jquery.simpleGallery.js"></script>
+                                    <script type="text/javascript" src="js/jquery.simpleLens.js"></script>
+                                    <!-- slick slider -->
+                                    <script type="text/javascript" src="js/slick.js"></script>
+                                    <!-- Price picker slider -->
+                                    <script type="text/javascript" src="js/nouislider.js"></script>
+
+                                    <!-- Custom js -->
+                                    <script src="js/custom.js"></script> 
+
+                                    </body>
+                                    </html>
