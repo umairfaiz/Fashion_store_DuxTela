@@ -1,3 +1,7 @@
+<?php
+require 'database/dbConnect.php';
+session_start();
+?>
 <link href='https://fonts.googleapis.com/css?family=Nosifer|League+Script|Yellowtail|Permanent+Marker|Codystar|Eater|Molle:400italic|Snowburst+One|Shojumaru|Frijole|Gloria+Hallelujah|Calligraffitti|Tangerine|Monofett|Monoton|Arbutus|Chewy|Playball|Black+Ops+One|Rock+Salt|Pinyon+Script|Orbitron|Sacramento|Sancreek|Kranky|UnifrakturMaguntia|Creepster|Pirata+One|Seaweed+Script|Miltonian|Herr+Von+Muellerhoff|Rye|Jacques+Francois+Shadow|Montserrat+Subrayada|Akronim|Faster+One|Megrim|Cedarville+Cursive|Ewert|Plaster' rel='stylesheet' type='text/css'>
 
 <link href="customization/tdesignAPI/css/api.css" rel="stylesheet">
@@ -284,10 +288,11 @@
                     </tr>
                     
                 </table>
-                <b>Design type</b> <br>
+<!--                <b>Design type</b> <br>
                 <input type="radio" name="design" value="screen_print" checked> Screen<br>
                 <input type="radio" name="design" value="sub_print" > Sublimation<br>
-                <input type="radio" name="design" value="embroidery_print" > Embroidery<br><br>
+                <input type="radio" name="design" value="embroidery_print" > Embroidery<br><br>-->
+                <br><br><br>
                 <button type="button" class="btn btn-primary btn-block preview_images"  data-toggle="modal" data-target=".bs-example-modal-lg">
                     Preview
                 </button>
@@ -321,14 +326,18 @@
                         <button type="submit" class="btn btn-primary">Proceed</button>
                         </form>-->
                     <div class="row">
-                        <form method="POST" enctype="multipart/form-data" id="imageFileForm" action="checkout/checkout.php">
+                        <form method="POST" enctype="multipart/form-data" id="imageFileForm" action="quotation_mail.php">
+                            <div style="text-align:center;"><b>Design type :-</b>
+                                <input type="radio" name="design" value="screen_print" checked> Screen
+                                <input type="radio" name="design" value="sub_print" > Sublimation
+                                <input type="radio" name="design" value="embroidery_print" > Embroidery<br><br></div>
                             <div class="col-md-1">
-                                <button type="button" class="btn btn-default close_img" data-dismiss="modal">
+<!--                                <button type="button" class="btn btn-default close_img" data-dismiss="modal">
                                     Close
-                                </button>
+                                </button>-->
                             </div>
                             <div class="col-md-2">
-                                TEXT
+                               
                             </div>
 
                             <div class="col-md-6">
@@ -374,12 +383,18 @@
                                     </center>
                             </div>
                             <div class="col-md-2">
+<!--                                <input type="hidden" name="small" value="" />
+                                <input type="hidden" name="medium" value="" />
+                                <input type="hidden" name="large" value="" />
+                                <input type="hidden" name="xlarge"value="" />
+                                <input type="hidden" name="xxlarge"  value="" />
+                                <input type="hidden" name="design" value="" />-->
                                 <input type="hidden" name="img_front" id="img_front" value="" />
                                 <input type="hidden" name="img_back" id="img_back" value="" />
                                 <input type="hidden" name="img_left" id="img_left" value="" />
                                 <input type="hidden" name="img_right" id="img_right" value="" />
                                 <button type="submit" class="btn btn-primary">
-                                    Next
+                                    Request quotation
                                 </button>
                             </div>
                         </form>

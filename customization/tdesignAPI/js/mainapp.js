@@ -274,6 +274,8 @@ function capture() {
                 document.getElementById("image_reply").appendChild(canvas);
 				//Set hidden field's value to image data (base-64 string)
 				$('#img_front').val(canvas.toDataURL("image/png"));
+//                $data = canvas.toDataURL("image/png")
+//                console.log($data);
             }
         });
 	//$('#preview_front').hide();
@@ -282,6 +284,7 @@ function capture() {
             onrendered: function(canvas) {
                 document.getElementById("image_reply").appendChild(canvas);
 				$('#img_back').val(canvas.toDataURL("image/png"));
+                                
 				
             }
         });
@@ -290,6 +293,8 @@ function capture() {
                 document.getElementById("image_reply").appendChild(canvas);
 				//Set hidden field's value to image data (base-64 string)
 				$('#img_left').val(canvas.toDataURL("image/png"));
+//                                $data = canvas.toDataURL("image/png")
+//                console.log($data);
             }
         });
         html2canvas($('#preview_right'), {

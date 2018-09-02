@@ -1,4 +1,7 @@
-
+<?php
+require 'database/dbConnect.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -191,25 +194,45 @@
           <div class="aa-product-details-area">
             <div class="aa-product-details-content">
               <div class="row">
-                
-                <!-- Modal view content -->
-                <div class="col-md-7 col-sm-7 col-xs-12">
-                  <div class="aa-product-view-content">
-                    <h3>Update Products</h3>
-                    <form method="POST" action="editEventServlet">
-                    <div class="aa-prod-view-size">
-                      Event ID: <input type="text" name="event_id" value="" /><br/><br/>
-                      New Event time:  <input type="text" name="event_time" placeholder="ex. 07:00 am "value="" /><br/><br/>
-                      New Event Name : <input type="text" name="event_name" value="" /><br/><br/>
-                    </div>
-                    <div class="aa-prod-view-bottom">
-                        <button class="aa-add-to-cart-btn" href>Update event</button>
-                      <a class="aa-add-to-cart-btn" href="admin_index.php">Go back</a>
-                    </div>
-                    </form>    
-                  </div>
-                </div>
-              </div>
+                                    <form method="POST" action="editProducts.php" enctype="multipart/form-data" >
+                                        <!-- Modal view content -->
+                                        <h2>Edit products</h2><br>
+                                        <div class="col-md-6">
+                                            <div class="aa-product-view-content">
+                                                <div class="aa-prod-view-size">
+                                                    <label >Product ID:</label><br/>
+                                                    <input type="text" name="item_id"/><br/><br/>
+                                                    <label >New Product name:</label><br/>
+                                                    <input type="text" name="item_name" value="" class="form-control"/><br/><br/>
+                                                    <label >New Product Units:</label><br/>
+                                                    <input type="text" name="item_units" value="" class="form-control" /><br/><br/>
+                                                    <label >New Product Discount: (%)</label><br/>
+                                                    <input type="text" name="item_discount" value="" placeholder="Ex:- 10" class="form-control" /><br/><br/>
+                                                    
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="aa-product-view-content">
+                                                <div class="aa-prod-view-size">
+                                                    <label >New Product Price: (Rs)</label><br/>
+                                                    <input type="text" name="item_price" value="" placeholder="Ex:- 1500" class="form-control"/><br/><br/>
+                                                    <label >New Product description:</label><br/>
+                                                    <textarea name="textarea" cols="40" rows="5" placeholder="Product description" class="form-control"></textarea><br><br><br><br><br><br><br>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="aa-prod-view-bottom">
+                                            
+                                            <button type="submit"  name="submit" class="aa-add-to-cart-btn" >Save Edit</button>
+                                            <a class="aa-add-to-cart-btn" href="CRD_products.php">Add new products</a>
+                                            <a class="aa-add-to-cart-btn" href="admin_index.php"><fa class="fa fa-home"></fa> Home</a>
+                                        </div>
+                                    </form>  
+                                </div>
             </div>
           </div>
         </div>
@@ -218,56 +241,61 @@
   </section>
   <!-- / product category -->
 <section id="cart-view">
-   <div class="container">
-     <div class="row">
-       <div class="col-md-12">
-         <div class="cart-view-area">
-           <div class="cart-view-table">
-             <form action="">
-               <div class="table-responsive">
-                  <table class="table">
-                    <thead>
-                      <tr>
-                        <th></th>
-                        <th></th>
-                        <th>ID</th>
-                        <th>Product</th>
-                        <th>Gender</th>
-                        <th>Description</th>
-                        <th>Availability</th>
-                        <th>Price</th>
-                      </tr>
-                    </thead>
-                    <sql:setDataSource var="db" driver="org.apache.derby.jdbc.ClientDriver" url="jdbc:derby://localhost:1527/themePark" user="umair" password="1234"/>
-                   <sql:query var="bulletinList"  dataSource="${db}">
-                       SELECT * FROM UMAIR.BULLETINBOARDCB006302  
-                   </sql:query>
-                    <tbody>
-                        <c:forEach items="${bulletinList.rows}" var="i"> 
-                      <tr>
-                    <form action="bulletinServlet" method="GET">
-                        <td><button class="remove" type="submit" name="remove_event"><fa class="fa fa-close"></fa></button></td>
-                        <td><a href="#"><img src="img/bulletin/${i.EVENT_ID}.jpg" alt="${i.EVENT_ID}"></a></td>
-                        <input type="hidden" name="event_id" value="${i.EVENT_ID}" />
-                        <td><a class="aa-cart-title" href="#">${i.EVENT_NAME}</a></td>
-                        <td></td>   
-                        <td></td>   
-                        <td></td>   
-                        <td></td>   
-                        <td></td>   
-                        </form>
-                      </tr>
-                      </c:forEach>
-                    </tbody>
-                  </table>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="cart-view-area">
+                            <div class="cart-view-table">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Product ID</th>
+                                                    <th>Product</th>
+                                                    <th>Name</th>
+                                                    <th>Category</th>
+                                                    <th>Description</th>
+                                                    <th>Price</th>
+                                                    <th>Discount</th>                                                   
+                                                    <th>Units</th>
+                                                </tr>
+                                            </thead>
+                                            <?php
+                                                $result = $db->query("SELECT * FROM items") or die($db->error());
+                                            ?>
+                                            <?php
+                                                while( $row = mysqli_fetch_array($result) ){
+                                            ?>
+                                            
+                                            <tbody>
+                                                <form action="deleteProduct.php" method="post" id="addform<?php echo $row['itemID']; ?>">
+                                                <tr>
+                                                    <td><button class="remove"  title="Delete"><fa class="fa fa-close"></fa></button></td>
+                                                    <!--<td><button title="Edit"><fa class="fa fa-edit"></fa></button></td>-->
+                                                    <td><?php echo $row['itemID']; ?></td>
+                                                    <td><img src="product_img/<?php echo $row['itemCategory']; ?>/<?php echo $row['itemimg1']; ?>" alt="product img"></td>
+                                                    <td><?php echo $row['itemName']; ?></td>
+                                                    <td><?php echo $row['itemCategory']; ?></td>
+                                                    <td><?php echo $row['itemDescription']; ?></td>
+                                                    <td><?php echo $row['itemPrice']; ?></td>
+                                                    <td><?php echo $row['itemDiscount']; ?></td>
+                                                    <td><?php echo $row['itemUnits']; ?></td>
+                                                    <input type="hidden" name="remove_item" value="<?php echo $row['itemID']; ?>"/>
+                                                </tr>
+                                                </form>
+                                            </tbody>
+                                                <?php
+                                                }
+                                                ?>
+                                        </table>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-             </form>
-           </div>
-         </div>
-       </div>
-     </div>
-   </div>
- </section>
+            </div>
+        </section>
   <!-- footer -->  
    <footer id="aa-footer">
     <!-- footer bottom -->

@@ -100,12 +100,16 @@
               <!-- / header top left -->
               <div class="aa-header-top-right">
                 <ul class="aa-head-top-nav-right">
-                  <li><a href="account.html">My Account</a></li>
-                  <li class="hidden-xs"><a href="wishlist.html">Wishlist</a></li>
-                  <li class="hidden-xs"><a href="cart.html">My Cart</a></li>
-                  <li class="hidden-xs"><a href="checkout.html">Checkout</a></li>
-                  <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li>
-                </ul>
+                                        <?php if (!isset($_SESSION['logged_in'])){ ?>
+                                        <li class="hidden-xs"><a href="account.php">Account</a></li>
+                                        
+                                        <?php } else{?>
+                                        <li class="hidden-xs"><a href="wishlist">Wishlist</a></li>
+                                        <li class="hidden-xs"><a href="cart">My Cart</a></li>
+                                        <li class="hidden-xs"><a href="checkout">Checkout</a></li>
+                                        <li class="hidden-xs"><a href="logout.php">Logout</a></li>
+                                        <?php } ?>
+                                    </ul>
               </div>
             </div>
           </div>
@@ -320,7 +324,7 @@
  
   <!-- catg header banner section -->
   <section id="aa-catg-head-banner">
-   <img src="img/fashion/fashion-header-bg-8.jpg" alt="fashion img">
+   <img src="img/Banners/fashion-header-bg-8.jpg" alt="fashion img">
    <div class="aa-catg-head-banner-area">
      <div class="container">
       <div class="aa-catg-head-banner-content">
