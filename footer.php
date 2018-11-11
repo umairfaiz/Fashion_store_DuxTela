@@ -35,6 +35,7 @@ and open the template in the editor.
                                                                         <div class="aa-footer-widget">
                                                                             <h3>Knowledge Base</h3>
                                                                             <ul class="aa-footer-nav">
+                                                                                <li><a href="size-chart.php">Size Chart</a></li>
                                                                                 <li><a href="#">Delivery</a></li>
                                                                                 <li><a href="#">Returns</a></li>
                                                                                 <li><a href="#">Discount</a></li>
@@ -58,7 +59,6 @@ and open the template in the editor.
                                                                         <div class="aa-footer-widget">
                                                                             <h3>Contact Us</h3>
                                                                             <address>
-                                                                                <p> Address</p>
                                                                                 <p><span class="fa fa-phone"></span>+94-70-270-6900</p>
                                                                                 <p><span class="fa fa-envelope"></span>info@duxtela.com</p>
                                                                             </address>
@@ -81,7 +81,7 @@ and open the template in the editor.
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="aa-footer-bottom-area">
-                                                            <p><span class="fa fa-copyright"> 2017, Duxtela | <a href="https://www.inovoratech.com">Inovora Technologies</a></span></p>
+                                                            <p><span class="fa fa-copyright"> <script>document.write(new Date().getFullYear())</script>. All Rights Reserved | <a href="https://www.inovoratech.com">Inovora Technologies</a></span></p>
                                                             <div class="aa-footer-payment">
                                                                 <span class="fa fa-cc-mastercard"></span>
                                                                 <span class="fa fa-cc-visa"></span>

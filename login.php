@@ -11,8 +11,8 @@ else{
     $user = $result->fetch_assoc();
     if (password_verify($_POST['password'], $user['password'])){
         $_SESSION['email'] = $user['email'];
-        $_SESSION['message'] = 'Successfully logged in';
         $_SESSION['username'] = $user['firstname'];
+        $_SESSION['userID'] = $user['id'];
         $_SESSION['logged_in'] = true;
         header("location: index.php");
         

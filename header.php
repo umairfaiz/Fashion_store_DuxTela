@@ -1,6 +1,7 @@
 <?php 
     require 'database/dbConnect.php';
 ?>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -9,6 +10,14 @@ and open the template in the editor.
 -->
 <html>
     <head>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <script>
+          (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-6533276406494982",
+            enable_page_level_ads: true
+          });
+        </script>
+
         <meta charset="UTF-8">
         <title></title>
     </head>
@@ -28,6 +37,38 @@ and open the template in the editor.
              attribution=setup_tool
              page_id="213787329066150">
         </div>
+        <?php if (isset($_SESSION['message']) && isset($_GET['error']) == 1) { ?>
+            <div class="alert"  style="min-width:100%;" >
+                <span class="closebtn">&times;</span>  
+                <strong><?php echo $_SESSION['message']; ?></strong>
+            </div>
+            <!--                                        <div class="alert success">
+                                                        <span class="closebtn">&times;</span>  
+                                                        <strong>Success!</strong> Indicates a successful or positive action.
+                                                    </div>-->
+        <?php } ?>
+        <?php if (isset($_SESSION['fbmessage'])) { ?>
+            <div class="alert"  style="min-width:100%;" >
+                <span class="closebtn">&times;</span>  
+                <strong><?php echo $_SESSION['fbmessage']; ?></strong>
+            </div>
+
+        <?php } ?>
+        <?php if (isset($_SESSION['message']) && isset($_GET['success']) == 1) { ?>
+
+            <div class="alert success"  style="min-width:100%;" >
+                <span class="closebtn">&times;</span>  
+                <strong><?php echo $_SESSION['message']; ?></strong>
+
+            </div>
+        <?php } ?>  
+
+        <!--if logged in do not show this message-->
+<?php if (!isset($_SESSION['logged_in'])) {?>
+            <div class="example1"><h3>10% off on sign ups!!</h3></div>
+       <?php } ?>  
+        
+        
         <!-- Start header section -->
         <header id="aa-header">
             <!-- start header top  -->
@@ -74,14 +115,13 @@ and open the template in the editor.
 
 
                                         <?php } else { ?>
-<!--                                            <li class="hidden-xs"><a href="wishlist">Wishlist</a></li>
-                                            <li class="hidden-xs"><a href="cart">My Cart</a></li>
-                                            <li class="hidden-xs"><a href="checkout">Checkout</a></li>-->
+                                            <li class="hidden-xs"><a href="cart.php">My Cart</a></li>
+                                            <li class="hidden-xs"><a href="checkout.php">Checkout</a></li>
                                             <li class="hidden-xs"><a href="contact.php">Contact Us</a></li>
                                             <li class="hidden-xs"><a href="about.php">About Us</a></li>
                                             <li ><a href="logout.php">Logout</a></li>
                                             <?php if (isset($_SESSION['logged_in'])) { ?>
-                                                <li>Hi, <?php echo $_SESSION['username']; ?></li>
+                                                <li><a href="account-details.php">Hi, <?php echo $_SESSION['username']; ?></a></li>
                                             <?php } ?>
                                         <?php } ?>
                                     </ul>
@@ -119,54 +159,9 @@ and open the template in the editor.
                                 <!-- cart box -->
                                 <div class="aa-cartbox">
                                     <p id="fb_name"></p>
-<!--                                  <a class="aa-cart-link" href="#">
-                                    <span class="fa fa-"></span>
-                                    <span class="aa-cart-title">SHOPPING CART</span>
-                                    <span class="aa-cart-">2</span>
-                                  </a>-->
-<!--                                  <div class="aa-cartbox-summary">
-                                    <ul>
-                                      <li>
-                                        <a class="aa-cartbox-img" href="#"><img src="img/woman-small-2.jpg" alt="img"></a>
-                                        <div class="aa-cartbox-info">
-                                          <h4><a href="#">Product Name</a></h4>
-                                          <p>1 x $250</p>
-                                        </div>
-                                        <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                                      </li>
-                                      <li>
-                                        <a class="aa-cartbox-img" href="#"><img src="img/woman-small-1.jpg" alt="img"></a>
-                                        <div class="aa-cartbox-info">
-                                          <h4><a href="#">Product Name</a></h4>
-                                          <p>1 x $250</p>
-                                        </div>
-                                        <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                                      </li>                    
-                                      <li>
-                                        <span class="aa-cartbox-total-title">
-                                          Total
-                                        </span>
-                                        <span class="aa-cartbox-total-price">
-                                          $500
-                                        </span>
-                                      </li>
-                                    </ul>
-                                    <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.html">Checkout</a>
-                                  </div>-->
+
                                 </div>
                                 <!-- / cart box -->
-                                <!-- search box -->
-
-<!--                               <div class="aa-search-box">
-                                   <p id="fb_name"></p>
-                                  <form action="">
-                                    <input type="text" name="" id="" placeholder="Search here ex. 'man' ">
-                                    <button type="submit"><span class="fa fa-search"></span></button>
-                                      
-                                  </form>
-                                   
-                                 / search box              
-                            </div>-->
                         </div>
                     </div>
                 </div>

@@ -37,10 +37,10 @@ require 'database/dbConnect.php';
         <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet' type='text/css'>
 
         <!-- Testimonial CSS -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+<!--        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">-->
+<!--        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/style.css">-->
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
         <!--[if lt IE 9]>
@@ -64,7 +64,7 @@ require 'database/dbConnect.php';
         <!-- END SCROLL TOP BUTTON -->
 
         <!--<font color="BLACK"><marquee direction="left" style="background:#B1E010"  scrollamount="5">10% off on sign ups!!</marquee></font>-->
-        <div class="example1"><h3>10% off on sign ups!!</h3></div>
+
         <!-- Start header section -->
         <?php
                                       include("header.php");
@@ -84,7 +84,7 @@ require 'database/dbConnect.php';
                                                         </div>
                                                         <div class="seq-title">
 
-                                                            <h2 data-seq>Mens Collection</h2>                
+                                                            <h2 data-seq>Men's Collection</h2>                
                                                             <!--<p data-seq>Branded T-shirts</p>-->
                                                             <a data-seq href="mens.php" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
                                                         </div>
@@ -118,7 +118,7 @@ require 'database/dbConnect.php';
                                                         </div>
                                                         <div class="seq-title">
                                                             <!--<span data-seq>Get your T-shirt customized</span>-->                
-                                                            <h2 data-seq>Womens Collection</h2>                
+                                                            <h2 data-seq>Women's Collection</h2>                
                                                             <!--<p data-seq>sdnksndklnl aflanfln</p>-->
                                                             <a data-seq href="womens.php" class="aa-shop-now-btn aa-secondary-btn">SHOP NOW</a>
                                                         </div>
@@ -166,7 +166,7 @@ require 'database/dbConnect.php';
                                                                                 <!-- start single product item -->
                                                                                 <li>
                                                                                     <figure>
-                                                                                        <a class="aa-product-img" href="#"><img src="img/<?php echo $row['itemCategory']; ?>/<?php echo $row['itemimg1']; ?>" alt="img"></a>
+                                                                                        <a class="aa-product-img" href="getProduct.php?itemid=<?php echo $row['itemID']; ?>&pagelocation=index"><img src="img/<?php echo $row['itemCategory']; ?>/<?php echo $row['itemimg1']; ?>" alt="img"></a>
                                                                                         <!--<a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>-->
                                                                                         <figcaption>
                                                                                             <h4 class="aa-product-title"><a href="#"><?php echo $row['itemName']; ?></a></h4>
@@ -201,7 +201,7 @@ require 'database/dbConnect.php';
                                                                                 <!-- start single product item -->
                                                                                 <li>
                                                                                     <figure>
-                                                                                        <a class="aa-product-img" href="#"><img src="img/<?php echo $row['itemCategory']; ?>/<?php echo $row['itemimg1']; ?>" alt="img"></a>
+                                                                                        <a class="aa-product-img" href="getProduct.php?itemid=<?php echo $row['itemID']; ?>&pagelocation=index"><img src="img/<?php echo $row['itemCategory']; ?>/<?php echo $row['itemimg1']; ?>" alt="img"></a>
                                                                                         <!--<a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>-->
                                                                                         <figcaption>
                                                                                             <h4 class="aa-product-title"><a href="#"><?php echo $row['itemName']; ?></a></h4>
@@ -387,142 +387,142 @@ require 'database/dbConnect.php';
                                     
                                     <!-- Testimonial -->
                                     <section id="aa-testimonial">  
-                                        <!--                                        <div class="container">
-                                                                                    <div class="row">
-                                                                                        <div class="col-md-12">
-                                                                                            
-                                                                                            <div class="aa-testimonial-area">
-                                                                                                
-                                                                                                <ul class="aa-testimonial-slider">
-                                                                                                    
-                                                                                                     single slide 
-                                                                                                    <li>
-                                                                                                        <div class="aa-testimonial-single">
-                                                                                                            <img class="aa-testimonial-img" src="img/testimonial-img-2.jpg" alt="testimonial img">
-                                                                                                            <span class="fa fa-quote-left aa-testimonial-quote"></span>
-                                                                                                            <p>Everything about my order was exceptional. I will definitely choose Dux-Tela again.</p>
-                                                                                                            <div class="aa-testimonial-info">
-                                                                                                                <p>Chanu</p>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </li>
-                                                                                                     single slide 
-                                                                                                    <li>
-                                                                                                        <div class="aa-testimonial-single">
-                                                                                                            <img class="aa-testimonial-img" src="img/testimonial-img-2.jpg" alt="testimonial img">
-                                                                                                            <span class="fa fa-quote-left aa-testimonial-quote"></span>
-                                        
-                                                                                                            <div class="aa-testimonial-info">
-                                                                                                                <p>Best best best.. One of the best .. I ordered 40 training kits from duxtela and got it on time and got a good price compared to others in the business..</p>
-                                                                                                                <div class="aa-testimonial-info">
-                                                                                                                    <p>Inamul Hassan</p>
-                                                                                                                </div>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </li>
-                                                                                                     single slide 
-                                                                                                    <li>
-                                                                                                        <div class="aa-testimonial-single">
-                                                                                                            <img class="aa-testimonial-img" src="img/testimonial-img-2.jpg" alt="testimonial img">
-                                                                                                            <span class="fa fa-quote-left aa-testimonial-quote"></span>
-                                                                                                            <p>I received my parcel, thank you very much for that. It is awesome, one of the best t-shirt collection I have ever have.</p>
-                                                                                                            <div class="aa-testimonial-info">
-                                                                                                                <p>Vimanthi Shamindy</p>
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                    </li>
-                                                                                                </ul>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>-->
-                                        <div class="testimonials-container section-container section-container-image-bg">
-                                            <div class="container">
-                                                <div class="row">
-                                                    <div class="col-sm-12 testimonials section-description">
-                                                        <h2>Our Testimonials</h2>
-                                                        <div class="divider-1"><div class="line"></div></div>
-                                                        <p class="medium-paragraph">Take a look below to learn what our clients are saying about us:</p>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-sm-10 col-sm-offset-1 testimonial-list">
-                                                        <div role="tabpanel">
-                                                            <!-- Tab panes -->
-                                                            <div class="tab-content">
-                                                                <div role="tabpanel" class="tab-pane fade in active" id="tab1">
-                                                                    <div class="testimonial-image">
-                                                                        <img src="assets/img/testimonials/1.jpg" alt="t1">
-                                                                    </div>
-                                                                    <div class="testimonial-text">
-                                                                        <p>
-                                                                            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
-                                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
-                                                                            Lorem ipsum dolor sit amet, consectetur..."<br>
-                                                                            <a href="#">Lorem Ipsum, dolor.co.uk</a>
-                                                                        </p>
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <div class="aa-testimonial-area">
+
+                                                        <ul class="aa-testimonial-slider">
+
+                                                            <!--single slide--> 
+                                                            <li>
+                                                                <div class="aa-testimonial-single">
+                                                                    <img class="aa-testimonial-img" src="img/testimonialDefault.jpg" alt="testimonial img">
+                                                                    <span class="fa fa-quote-left aa-testimonial-quote"></span>
+                                                                    <p>Everything about my order was exceptional. I will definitely choose Dux-Tela again.</p>
+                                                                    <div class="aa-testimonial-info">
+                                                                        <p>Chanu</p>
                                                                     </div>
                                                                 </div>
-                                                                <div role="tabpanel" class="tab-pane fade" id="tab2">
-                                                                    <div class="testimonial-image">
-                                                                        <img src="assets/img/testimonials/2.jpg" alt="t2">
-                                                                    </div>
-                                                                    <div class="testimonial-text">
-                                                                        <p>
-                                                                            "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip 
-                                                                            ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
-                                                                            lobortis nisl ut aliquip ex ea commodo consequat..."<br>
-                                                                            <a href="#">Minim Veniam, nostrud.com</a>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div role="tabpanel" class="tab-pane fade" id="tab3">
-                                                                    <div class="testimonial-image">
-                                                                        <img src="assets/img/testimonials/3.jpg" alt="t3">
-                                                                    </div>
-                                                                    <div class="testimonial-text">
-                                                                        <p>
-                                                                            "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
-                                                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
-                                                                            Lorem ipsum dolor sit amet, consectetur..."<br>
-                                                                            <a href="#">Lorem Ipsum, dolor.co.uk</a>
-                                                                        </p>
+                                                            </li>
+                                                            <!--single slide--> 
+                                                            <li>
+                                                                <div class="aa-testimonial-single">
+                                                                    <img class="aa-testimonial-img" src="img/testimonialDefault.jpg" alt="testimonial img">
+                                                                    <span class="fa fa-quote-left aa-testimonial-quote"></span>
+
+                                                                    <div class="aa-testimonial-info">
+                                                                        <p>Best best best.. One of the best .. I ordered 40 training kits from duxtela and got it on time and got a good price compared to others in the business..</p>
+                                                                        <div class="aa-testimonial-info">
+                                                                            <p>Inamul Hassan</p>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                                <div role="tabpanel" class="tab-pane fade" id="tab4">
-                                                                    <div class="testimonial-image">
-                                                                        <img src="assets/img/testimonials/4.jpg" alt="t4">
-                                                                    </div>
-                                                                    <div class="testimonial-text">
-                                                                        <p>
-                                                                            "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip 
-                                                                            ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
-                                                                            lobortis nisl ut aliquip ex ea commodo consequat..."<br>
-                                                                            <a href="#">Minim Veniam, nostrud.com</a>
-                                                                        </p>
+                                                            </li>
+                                                            <!--single slide--> 
+                                                            <li>
+                                                                <div class="aa-testimonial-single">
+                                                                    <img class="aa-testimonial-img" src="img/testimonialDefault.jpg" alt="testimonial img">
+                                                                    <span class="fa fa-quote-left aa-testimonial-quote"></span>
+                                                                    <p>I received my parcel, thank you very much for that. It is awesome, one of the best t-shirt collection I have ever have.</p>
+                                                                    <div class="aa-testimonial-info">
+                                                                        <p>Vimanthi Shamindy</p>
                                                                     </div>
                                                                 </div>
-                                                            </div>
-                                                            <!-- Nav tabs -->
-                                                            <ul class="nav nav-tabs" role="tablist">
-                                                                <li role="presentation" class="active">
-                                                                    <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab"></a>
-                                                                </li>
-                                                                <li role="presentation">
-                                                                    <a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab"></a>
-                                                                </li>
-                                                                <li role="presentation">
-                                                                    <a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab"></a>
-                                                                </li>
-                                                                <li role="presentation">
-                                                                    <a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab"></a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
+                                                            </li>
+                                                        </ul>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
+                                        <!--                                        <div class="testimonials-container section-container section-container-image-bg">
+                                                                                    <div class="container">
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-12 testimonials section-description">
+                                                                                                <h2>Our Testimonials</h2>
+                                                                                                <div class="divider-1"><div class="line"></div></div>
+                                                                                                <p class="medium-paragraph">Take a look below to learn what our clients are saying about us:</p>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div class="row">
+                                                                                            <div class="col-sm-10 col-sm-offset-1 testimonial-list">
+                                                                                                <div role="tabpanel">
+                                                                                                     Tab panes 
+                                                                                                    <div class="tab-content">
+                                                                                                        <div role="tabpanel" class="tab-pane fade in active" id="tab1">
+                                                                                                            <div class="testimonial-image">
+                                                                                                                <img src="assets/img/testimonials/1.jpg" alt="t1">
+                                                                                                            </div>
+                                                                                                            <div class="testimonial-text">
+                                                                                                                <p>
+                                                                                                                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
+                                                                                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
+                                                                                                                    Lorem ipsum dolor sit amet, consectetur..."<br>
+                                                                                                                    <a href="#">Lorem Ipsum, dolor.co.uk</a>
+                                                                                                                </p>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div role="tabpanel" class="tab-pane fade" id="tab2">
+                                                                                                            <div class="testimonial-image">
+                                                                                                                <img src="assets/img/testimonials/2.jpg" alt="t2">
+                                                                                                            </div>
+                                                                                                            <div class="testimonial-text">
+                                                                                                                <p>
+                                                                                                                    "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip 
+                                                                                                                    ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+                                                                                                                    lobortis nisl ut aliquip ex ea commodo consequat..."<br>
+                                                                                                                    <a href="#">Minim Veniam, nostrud.com</a>
+                                                                                                                </p>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div role="tabpanel" class="tab-pane fade" id="tab3">
+                                                                                                            <div class="testimonial-image">
+                                                                                                                <img src="assets/img/testimonials/3.jpg" alt="t3">
+                                                                                                            </div>
+                                                                                                            <div class="testimonial-text">
+                                                                                                                <p>
+                                                                                                                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
+                                                                                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et. 
+                                                                                                                    Lorem ipsum dolor sit amet, consectetur..."<br>
+                                                                                                                    <a href="#">Lorem Ipsum, dolor.co.uk</a>
+                                                                                                                </p>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div role="tabpanel" class="tab-pane fade" id="tab4">
+                                                                                                            <div class="testimonial-image">
+                                                                                                                <img src="assets/img/testimonials/4.jpg" alt="t4">
+                                                                                                            </div>
+                                                                                                            <div class="testimonial-text">
+                                                                                                                <p>
+                                                                                                                    "Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip 
+                                                                                                                    ex ea commodo consequat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit 
+                                                                                                                    lobortis nisl ut aliquip ex ea commodo consequat..."<br>
+                                                                                                                    <a href="#">Minim Veniam, nostrud.com</a>
+                                                                                                                </p>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                     Nav tabs 
+                                                                                                    <ul class="nav nav-tabs" role="tablist">
+                                                                                                        <li role="presentation" class="active">
+                                                                                                            <a href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab"></a>
+                                                                                                        </li>
+                                                                                                        <li role="presentation">
+                                                                                                            <a href="#tab2" aria-controls="tab2" role="tab" data-toggle="tab"></a>
+                                                                                                        </li>
+                                                                                                        <li role="presentation">
+                                                                                                            <a href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab"></a>
+                                                                                                        </li>
+                                                                                                        <li role="presentation">
+                                                                                                            <a href="#tab4" aria-controls="tab4" role="tab" data-toggle="tab"></a>
+                                                                                                        </li>
+                                                                                                    </ul>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>-->
                                     </section>
                                     <!-- / Testimonial -->
                                     <!-- Latest Blog -->
@@ -612,10 +612,10 @@ require 'database/dbConnect.php';
                                     
                                     <!--testimonial-->
                                     <!-- Javascript -->
-                                    <script src="assets/js/jquery-1.11.1.min.js"></script>
+<!--                                    <script src="assets/js/jquery-1.11.1.min.js"></script>
                                     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
                                     <script src="assets/js/jquery.backstretch.min.js"></script>
-                                    <script src="assets/js/scripts.js"></script>
+                                    <script src="assets/js/scripts.js"></script>-->
 
                                     </body>
                                     </html>
