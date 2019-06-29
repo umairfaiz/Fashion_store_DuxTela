@@ -10,13 +10,18 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        
+        <!--font awesome-->
+        
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<!--        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <script>
           (adsbygoogle = window.adsbygoogle || []).push({
             google_ad_client: "ca-pub-6533276406494982",
             enable_page_level_ads: true
           });
-        </script>
+        </script>-->
 
         <meta charset="UTF-8">
         <title></title>

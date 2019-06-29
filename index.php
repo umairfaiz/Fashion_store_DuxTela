@@ -127,10 +127,10 @@ require 'database/dbConnect.php';
                                                 </ul>
                                                 <!-- slider navigation btn -->
                                                 
-                                                        <fieldset class="seq-nav" aria-controls="sequence" aria-label="Slider buttons">
-<!--                                                          <a type="button" class="seq-prev" aria-label="Previous" style="visibility: hidden"></a>
-                                                          <a type="button" class="seq-next" aria-label="Next" style="visibility: hidden"><span class="fa fa-angle-right"></span></a>-->
-                                                        </fieldset>
+<!--                                                        <fieldset class="seq-nav" aria-controls="sequence" aria-label="Slider buttons">
+                                                          <a type="button" class="seq-prev" aria-label="Previous" style="visibility: hidden"></a><i class="fas fa-chevron-left"></i>
+                                                          <a type="button" class="seq-next" aria-label="Next" style="visibility: hidden"><span class="fa fa-angle-right"></span></a>
+                                                        </fieldset>-->
                                                 
                                             </div>
                                         </div>

@@ -63,8 +63,8 @@ and open the template in the editor.
                                                                                 <p><span class="fa fa-envelope"></span>info@duxtela.com</p>
                                                                             </address>
                                                                             <div class="aa-footer-social">
-                                                                                <a href="https://www.facebook.com/duxtela"><span class="fa fa-facebook"></span></a>
-                                                                                <a href="https://www.instagram.com/duxtela/"><span class="fa fa-instagram"></span></a>
+                                                                                <a href="https://www.facebook.com/duxtela"><span class="fab fa-facebook"></span></a>
+                                                                                <a href="https://www.instagram.com/duxtela/"><span class="fab fa-instagram"></span></a>
                                                                             </div>
                                                                         </div>
                                                                     </div>
@@ -81,10 +81,10 @@ and open the template in the editor.
                                                 <div class="row">
                                                     <div class="col-md-12">
                                                         <div class="aa-footer-bottom-area">
-                                                            <p><span class="fa fa-copyright"> <script>document.write(new Date().getFullYear())</script>. All Rights Reserved | <a href="https://www.inovoratech.com">Inovora Technologies</a></span></p>
+                                                            <p><span class="fa fa-copyright"> <script>document.write(new Date().getFullYear())</script>. All Rights Reserved </span></p>
                                                             <div class="aa-footer-payment">
-                                                                <span class="fa fa-cc-mastercard"></span>
-                                                                <span class="fa fa-cc-visa"></span>
+                                                                <span class="fab fa-cc-mastercard"></span>
+                                                                <span class="fab fa-cc-visa"></span>
                                                             </div>
                                                         </div>
                                                     </div>

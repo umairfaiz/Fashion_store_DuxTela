@@ -179,33 +179,68 @@ function show(id) {
                                     <div class="col-md-5 col-sm-5 col-xs-12">                              
                                         <div class="aa-product-view-slider">                                
                                             <div id="demo-1" class="simpleLens-gallery-container">
-                                                <div class="simpleLens-container">
+<!--                                                <div class="simpleLens-container">
                                                     
                                                     <div class="simpleLens-big-image-container">
                                                      <div id="myresult" class="img-zoom-result"><h3>Zoomed View</h3></div>
                                                         
                                                         
                                                         <div class="img-zoom-container">
-                                                            <!--<img id="myimage" onmouseover="mouseOver()" onmouseout="mouseOut()" src="img/women/Ella floral summer dress.png" width="250" height="300">-->
+                                                            <img id="myimage" onmouseover="mouseOver()" onmouseout="mouseOut()" src="img/women/Ella floral summer dress.png" width="250" height="300">
                                                             <img id="myimage" onMouseOver="show('myresult')" onMouseOut="hide('myresult')" src="img/<?php echo $product['itemCategory']; ?>/<?php echo $product['itemimg1']; ?>" alt="<?php echo $product['itemimg1']; ?>" width="250" height="300">
+                                                            <img id="myimage" onMouseOver="show('myresult')" onMouseOut="hide('myresult')" src="img/<?php echo $product['itemCategory']; ?>/IMG_8518.png" alt="<?php echo $product['itemimg1']; ?>" width="250" height="300">        
                                                         
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </div>-->
+                                                    <div class="simpleLens-container">
+                                                        <div class="simpleLens-big-image-container"><img src="img/<?php echo $product['itemCategory']; ?>/<?php echo $product['itemimg1']; ?>" class="simpleLens-big-image"></div>
+                                                    </div>
                                                 <?php
                                                     if (isset($product['itemimg2'])){
                                                 ?>
-                                                <div class="simpleLens-thumbnails-container">
+                                                    <div class="simpleLens-thumbnails-container">
+                                                        <a data-big-image="img/<?php echo $product['itemCategory']; ?>/<?php echo $product['itemimg1'];?>" class="simpleLens-thumbnail-wrapper">
+                                                            <!--<img src="img/view-slider/thumbnail/<?php echo $product['itemCategory']; ?>/<?php echo $product['itemimg1'];?>">-->
+                                                            <img src="img/<?php echo $product['itemCategory']; ?>/<?php echo $product['itemimg1'];?>" width="45" height="55">
+                                                        </a>  
+                                                        
+                                                        <a data-big-image="img/<?php echo $product['itemCategory']; ?>/<?php echo $product['itemimg2'];?>" class="simpleLens-thumbnail-wrapper">
+                                                            <img src="img/<?php echo $product['itemCategory']; ?>/<?php echo $product['itemimg2'];?>" width="45" height="55">
+                                                        </a>
+                                                        <?php
+                                                    if (isset($product['itemimg3'])){
+                                                ?>
+                                                        <a data-big-image="img/<?php echo $product['itemCategory']; ?>/<?php echo $product['itemimg3'];?>" class="simpleLens-thumbnail-wrapper">
+                                                            <img src="img/<?php echo $product['itemCategory']; ?>/<?php echo $product['itemimg3'];?>" width="45" height="55">
+                                                        </a>
+                                                        <?php 
+                                                }
+                                                ?>
+                                                        <?php
+                                                    if (isset($product['itemimg4'])){
+                                                ?>
+                                                        <a data-big-image="img/<?php echo $product['itemCategory']; ?>/<?php echo $product['itemimg4'];?>" class="simpleLens-thumbnail-wrapper">
+                                                            <img src="img/<?php echo $product['itemCategory']; ?>/<?php echo $product['itemimg4'];?>" width="45" height="55">
+                                                        </a>
+                                                        <?php 
+                                                }
+                                                ?>
+                                                        
+                                                    </div>
+                                                <?php 
+                                                }
+                                                ?>
+                                               
+<!--                                                <div class="simpleLens-thumbnails-container">
                                                     <a target="_blank" href="img/women/<?php echo $product['itemimg1'];?>">
                                                         <img src="img/view-slider/thumbnail/<?php echo $product['itemimg1'];?>">
                                                     </a>   
                                                     <a target="_blank" href="img/women/<?php echo $product['itemimg2'];?>">
                                                         <img src="img/view-slider/thumbnail/<?php echo $product['itemimg2'];?>">
                                                     </a>    
-                                                </div>
-                                                <?php 
-                                                }
-                                                ?>
+                                                </div>-->
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -258,8 +293,9 @@ function show(id) {
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     <div class="tab-pane fade in active" id="description">
-                                        <p><?php echo $product['itemDescription']; ?></p>
-<!--                                        <ul>
+                                        <?php echo $product['itemDescription']; ?>
+<!--                                        
+                                        <ul>
                                             <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod, culpa!</li>
                                             <li>Lorem ipsum dolor sit amet.</li>
                                         </ul>-->

@@ -134,19 +134,19 @@ try {
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <div >   
+<!--                        <div>   
                             <?php if (isset($_SESSION['message']) && isset($_GET['error'])==1) { ?>
-                                        <div class="alert">
+                                        <div class="alert"  style="min-width:100%;" >
                                             <span class="closebtn">&times;</span>  
                                             <strong><?php echo $_SESSION['message']; ?></strong>
                                         </div>
-<!--                                        <div class="alert success">
+                                        <div class="alert success">
                                             <span class="closebtn">&times;</span>  
                                             <strong>Success!</strong> Indicates a successful or positive action.
-                                        </div>-->
+                                        </div>
                             <?php } ?>
                             <?php if (isset($_SESSION['fbmessage'])) { ?>
-                                <div class="alert">
+                                <div class="alert"  style="min-width:100%;" >
                                     <span class="closebtn">&times;</span>  
                                     <strong><?php echo $_SESSION['fbmessage']; ?></strong>
                                 </div>
@@ -154,13 +154,13 @@ try {
                             <?php } ?>
                             <?php if (isset($_SESSION['message']) && isset($_GET['success']) == 1) { ?>
 
-                                <div class="alert success">
+                                <div class="alert success"  style="min-width:100%;" >
                                     <span class="closebtn">&times;</span>  
                                     <strong><?php echo $_SESSION['message']; ?></strong>
 
                                 </div>
                             <?php } ?>
-                                    </div>
+                                    </div>-->
                         <div class="aa-myaccount-area">            
                             <div class="row">
                                 <div class="col-md-6">

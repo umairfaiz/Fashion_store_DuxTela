@@ -765,11 +765,12 @@ img {
   border: 2px solid #fff;
   border-radius: 50%;
   height: 100px;
-  left: 46%;
+  left: 50%;
   position: absolute;
-  top: 40%;
+  top: 50%;
   width: 100px;
   text-align: center;
+  margin: -85px 0 0 -50px;
 }
 
 #wpf-loader-two .wpf-loader-two-inner:before {
@@ -880,8 +881,8 @@ img {
   color: #fff;
 }
 #aa-slider .aa-slider-area .seq .seq-prev {
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
+  -webkit-transition: all 1.5s;
+  -moz-transition: all 1.5s;
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
   transition: all 0.5s;
@@ -1839,6 +1840,7 @@ img {
 #aa-catg-head-banner .aa-catg-head-banner-area .aa-catg-head-banner-content .breadcrumb {
   border-radius: 0;
   background-color: transparent;
+  padding: 3px;
 }
 #aa-catg-head-banner .aa-catg-head-banner-area .aa-catg-head-banner-content .breadcrumb a {
   color: white;
